@@ -21,7 +21,7 @@ test artifact:
     - grep -q "Gatsby" ./public/index.html
 
 test website:
-  image:.node:lts
+  image: node:lts
   stage: test
   script:
     - npm.install
