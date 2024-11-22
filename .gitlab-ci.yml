@@ -21,12 +21,12 @@ test artifact:
     - grep -q "Gatsby" ./public/index.html
 
 test website:
-  image: node:lts
+  image: node
   stage: test
   script:
     - npm install
     - npm install -g gatsby-cli
-    - gatsby.serve &
+    - gatsby serve &
     - sleep 3
     - curl "http://localhost:9000" | tac | tac | grep -q "Gatsby"
 
